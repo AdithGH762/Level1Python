@@ -9,16 +9,18 @@
 # Activity 3
 
 def input_no():
-    return int(input("Enter the Number: "))
+    a = int(input("Enter the Number: "))
+    b = int(input("Enter the Number: "))
+    return a,b
 
-def add(a,b):
+def add():
+    a,b=input_no()
     return a+b
-def output(sum,a,b):
-    print(f"The sum of {a} and {b} is {sum}")
+
+def output():
+    sum=add()
+    print(f"The sum is {sum}")
 
 def main():
-    a=input_no()
-    b=input_no()
-    sum=add(a,b)
-    output(sum,a,b)
+    output()
 main()
