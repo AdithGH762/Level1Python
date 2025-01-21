@@ -13,14 +13,13 @@ def input_no():
     b = int(input("Enter the Number: "))
     return a,b
 
-def add():
-    a,b=input_no()
+def add(a,b):
     return a+b
 
-def output():
-    sum=add()
-    print(f"The sum is {sum}")
+def output(a,b):
+    print(f"The sum is {add(a,b)}")
 
 def main():
-    output()
+    a,b=input_no()
+    output(a,b)
 main()
