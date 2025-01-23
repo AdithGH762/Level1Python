@@ -37,7 +37,5 @@ def get_cs():
 def cs_to_lot(cs):
     return [tuple(pair.split("=")) for pair in cs.split(";")]
 def main():
-    cs=get_cs()
-    result=cs_to_lot(cs)
-    return print(result)
+    print(cs_to_lot(get_cs()))
 main()
