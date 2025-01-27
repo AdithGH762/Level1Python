@@ -28,5 +28,11 @@ def sanitize_input(input_string):
     return ";".join(sanitized_pairs)
 
 user_input = "`sy~s         ~te@!m=     s;da%$#tab^ase=d   ;user(na)me=u;pas]sword=p;env$ironment=prod@#;"
-sanitized_output = sanitize_input(user_input)
-print("Sanitized Output:", sanitized_output)
+ot = sanitize_input(user_input)
+print("Sanitized Output:", ot)
+
+def cs_to_lot(cs):
+    return [tuple(pair.split("=")) for pair in cs.split(";")]
+def main():
+    print(cs_to_lot(ot))
+main()
