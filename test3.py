@@ -23,10 +23,8 @@ def cs_to_lot(cs):
         lot.append((key,value))
     return lot
 def main():
-    cs=get_cs()
-    result=cs_to_lot(cs)
-    print(result)
-print(main())
+    print(cs_to_lot(get_cs()))
+main()
 
 # -------------------------------------------------------------------------------------
 

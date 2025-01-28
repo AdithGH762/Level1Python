@@ -15,19 +15,20 @@
 
 
 def sanitize_input(input_string):
-    key_value_pairs = input_string.split(";")
     sanitized_pairs = []
+    key_value_pairs = input_string.split(";")
 
     for pair in key_value_pairs:
         if '=' in pair:
-            key, value = pair.split("=", 1)
+            key, value = pair.split("=",1)
+            print(key, value)
             sanitized_key = ''.join([char for char in key if char.isalnum()])
             sanitized_value = ''.join([char for char in value if char.isalnum()])
             sanitized_pairs.append(sanitized_key + "=" + sanitized_value)
 
     return ";".join(sanitized_pairs)
 
-user_input = "`sy~s         ~te@!m=     s;da%$#tab^ase=d   ;user(na)me=u;pas]sword=p;env$ironment=prod@#;"
+user_input = "`sy~s         ~te@!m=     s;da%$#tab^ase=d   ;us=e=r(na)me=u;pas]sword=p;env$ironment=prod@#;"
 ot = sanitize_input(user_input)
 print("Sanitized Output:", ot)
 
