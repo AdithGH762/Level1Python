@@ -28,7 +28,7 @@ def sanitize_input(input_string):
 
     return ";".join(sanitized_pairs)
 
-user_input = "`sy~s         ~te@!m=     s;da%$#tab^ase=d   ;us=e=r(na)me=u;pas]sword=p;env$ironment=prod@#;"
+user_input = "`sy~s         ~te@!m=     s;da%$#tab^ase=#$%d   ;us=e=r(na)me=u;pas]sword=p;env$ironment=prod@#;"
 ot = sanitize_input(user_input)
 print("Sanitized Output:", ot)
 
