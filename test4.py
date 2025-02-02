@@ -20,20 +20,26 @@ def sanitize_input(input_string):
 
     for pair in key_value_pairs:
         if '=' in pair:
-            key, value = pair.split("=",1)
-            print(key, value)
-            sanitized_key = ''.join([char for char in key if char.isalnum()])
-            sanitized_value = ''.join([char for char in value if char.isalnum()])
-            sanitized_pairs.append(sanitized_key + "=" + sanitized_value)
+            key, value = pair.split("=", 1)
+            if not key.isalnum() and not value.isalnum():
+                print(f"Invalid KEY: {key} and VALUE: {value}")
+            elif not key.isalnum():
+                print(f"Invalid key: {key}")
+            elif not value.isalnum():
+                print(f"Invalid value: {value}")
+            else:
+                sanitized_pairs.append(f"{key}={value}")
 
     return ";".join(sanitized_pairs)
 
-user_input = "`sy~s         ~te@!m=     s;da%$#tab^ase=#$%d   ;us=e=r(na)me=u;pas]sword=p;env$ironment=prod@#;"
+user_input = "system=s;da%$#tab^ase=#$%d   ;us=e=r(na)me=u;pas]sword=p;environment=nature"
 ot = sanitize_input(user_input)
 print("Sanitized Output:", ot)
 
 def cs_to_lot(cs):
     return [tuple(pair.split("=")) for pair in cs.split(";")]
+
 def main():
     print(cs_to_lot(ot))
+
 main()
